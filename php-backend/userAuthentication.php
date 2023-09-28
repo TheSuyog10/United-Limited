@@ -15,7 +15,7 @@ if ($a == "" || $b == "" || $c == "" || $d == "") {
     //         }, 2000);
     //       </script>";
     echo 5;
-    exit;
+
     // } else if ($d != $e) {
 //     echo "<div id='alert'>Password And Confirm Password Doesn't Match</div>";
 //     echo "<script type='text/javascript'>
@@ -41,16 +41,18 @@ if ($a == "" || $b == "" || $c == "" || $d == "") {
         // Insert new user
         $query = "INSERT INTO users(first_name, last_name, username, password) VALUES('$a','$b','$c','$d')";
         $run = mysqli_query($conn, $query);
-        // if ($run) {
-        //     echo "<div id='alert success' class='alert-success'>Sign up successful!</div>";
-        //     echo "<script type='text/javascript'>
-        //             setTimeout(function() {
-        //                 document.getElementById('alert').style.display = 'none';
-        //             }, 3000);
-        //           </script>";
-        // } else {
-        //     echo "<div class='alert alert-danger'>Error found!</div>";
-        // }
+        if ($run == true) {
+            // echo "<div id='alert success' class='alert-success'>Sign up successful!</div>";
+            // echo "<script type='text/javascript'>
+            //         setTimeout(function() {
+            //             document.getElementById('alert').style.display = 'none';
+            //         }, 3000);
+            //       </script>";
+            echo 3;
+
+        } else {
+            // echo "<div class='alert alert-danger'>Error found!</div>";
+        }
     }
 }
 

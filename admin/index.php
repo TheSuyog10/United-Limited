@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign in & Sign up Form</title>
     <link rel="stylesheet" href="login.css" />
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d5cb331474.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
 <body>
+
     <main>
         <div class="box">
             <div class="inner-box">
@@ -28,17 +29,16 @@
                             <h6>Not registred yet?</h6>
                             <a href="#" class="toggle">Sign up</a>
                         </div>
-                        <h4 style="text-align:center;color:black; font-weight:400" id="RepMsg1"></h4>
+                        <h4 style="text-align:center;color:red; font-weight:400" id="RepMsg1"></h4>
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input type="text" minlength="4" class="input-field" name="uname" autocomplete="off"
-                                    required />
+                                <input type="text" minlength="4" class="input-field" name="uname" autocomplete="off" />
                                 <label><i class="fas fa-user"></i> Username</label>
                             </div>
 
                             <div class="input-wrap">
-                                <input type="password" minlength="4" class="input-field" name="pass" autocomplete="off"
-                                    required />
+                                <input type="password" minlength="4" class="input-field" name="pass"
+                                    autocomplete="off" />
                                 <label><i class="fas fa-lock"></i> Password</label>
                             </div>
 
@@ -55,17 +55,26 @@
 
                         $query = "select * from users where username='$a' and password='$b'";
                         $run = mysqli_query($conn, $query);
-
-                        if (mysqli_num_rows($run) > 0) {
-                            $_SESSION['username'] = $a;
-                            echo "<script>window.open('home.php','_self')</script>";
-                        } else {
+                        if ($a == "" || $b == "") {
                             echo "<script>
-                            document.getElementById('RepMsg1').innerHTML = '<i class=\"fas fa-thumbs-down\" style=\"color:red; font-size:12px;\"></i> Credentials Do Not Match';
+                            document.getElementById('RepMsg1').innerHTML = '<i class=\"fas fa-triangle-exclamation\" style=\"color:red; font-size:15px;\"></i> Empty Fields';
                             setTimeout(function() {
                                 document.getElementById('RepMsg1').innerHTML = '';
                             }, 3000);
                             </script>";
+                        } else {
+
+                            if (mysqli_num_rows($run) > 0) {
+                                $_SESSION['username'] = $a;
+                                echo "<script>window.open('home.php','_self')</script>";
+                            } else {
+                                echo "<script>
+                            document.getElementById('RepMsg1').innerHTML = '<i class=\"fas fa-triangle-exclamation\" style=\"color:red; font-size:15px;\"></i> Credentials Do Not Match';
+                            setTimeout(function() {
+                                document.getElementById('RepMsg1').innerHTML = '';
+                            }, 3000);
+                            </script>";
+                            }
                         }
                     }
                     ?>
@@ -80,32 +89,33 @@
                             <h2>Get Started
                             </h2>
                             <h6>Already have an account?</h6>
-                            <a href="#" class="toggle">Sign in</a>
+                            <a href="#" class="toggle">Sign in </a>
                         </div>
-                        <h4 style="text-align:center;color:red;" id="RepMsg"></h4>
+                        <h4 style="text-align:center;color:red; font-weight:400;" id="RepMsg"></h4>
                         <div class="actual-form">
                             <div class="input-wrap">
                                 <input type="text" minlength="4" name="fname" id="fname" class="input-field"
-                                    autocomplete="off" required />
+                                    autocomplete="off" />
                                 <label><i class="fas fa-user-tie"></i> First Name</label>
                             </div>
                             <div class="input-wrap">
                                 <input type="text" minlength="4" name="lname" id="lname" class="input-field"
-                                    autocomplete="off" required />
+                                    autocomplete="off" />
                                 <label><i class="fas fa-user-tie"></i> Last Name</label>
                             </div>
 
                             <div class="input-wrap">
-                                <input type="text" name="username" id="username" class="input-field" autocomplete="off"
-                                    required />
+                                <input type="text" name="username" id="username" class="input-field"
+                                    autocomplete="off" />
                                 <label><i class="fas fa-user"></i> Username</label>
                             </div>
 
                             <div class="input-wrap">
                                 <input type="password" minlength="4" name="password" id="password" class="input-field"
-                                    autocomplete="off" required />
+                                    autocomplete="off" />
                                 <label><i class="fas fa-lock"></i> Password</label>
                             </div>
+
 
                             <input type="submit" id="signupBtn" name="signUp" value="Sign Up" class="sign-btn" />
 
@@ -127,12 +137,12 @@
                                         type: "POST",
                                         data: $('#signupForm').serialize(),
                                         beforeSend: function () {
-                                            $('#RepMsg').fadeIn();
-                                            $('#RepMsg').html('<span style="color:black; font-weight:400"><i class="fas fa-thumbs-up" style="color:limegreen; font-size:13px;"></i> Signed Up Successfully!!! <span> <br> ');
-                                            setTimeout(() => {
-                                                $('#RepMsg').fadeOut();
-                                            }, 3000);
-                                            //$('#signupForm')[0].reset();
+                                            // $('#RepMsg').fadeIn();
+                                            // $('#RepMsg').html('<span style="color:black; font-weight:400"><i class="fas fa-circle-check" style="color:limegreen; font-size:13px;"></i> Signed Up Successfully!!! <span> <br> ');
+                                            // setTimeout(() => {
+                                            //     $('#RepMsg').fadeOut();
+                                            // }, 3000);                                            //$('#signupForm')[0].reset();
+
                                         },
 
 
@@ -144,20 +154,26 @@
                                             } if (response == 1) {
 
                                                 $('#RepMsg').fadeIn();
-                                                $('#RepMsg').html('<span style="color:black; font-weight:400;"><i class="fas fa-thumbs-down" style="color:red; font-size:12px;"></i> Username is already Taken<span>');
+                                                $('#RepMsg').html('<span style="color:red; font-weight:400;"><i class="fas fa-triangle-exclamation" style="color:red; font-size:12px;"></i> Username is already Taken<span>');
                                                 setTimeout(() => {
                                                     $('#RepMsg').fadeOut();
                                                 }, 3000);
 
                                             }
-                                            //  if (response == 3) {
-                                            //     $('#id_password').css('border-bottom', 'solid 2px red');
-                                            //     $('#id_conPassword').css('border-bottom', 'solid 2px red');
+                                            if (response == 3) {
 
-                                            //     $('#RepMsg').fadeIn();
-                                            //     $('#RepMsg').html('<i class="fa-solid fa-triangle-exclamation" style="color:red; font-size:11px;"></i>Password and Confirm Password did not match.')
+                                                $('#RepMsg').fadeIn();
+                                                $('#RepMsg').html('<span style="color:limegreen; font-weight:400"><i class="fas fa-circle-check" style="color:limegreen; font-size:13px;"></i> Signed Up Successfully!!! <span> <br> ');
+                                                setTimeout(() => {
+                                                    $('#RepMsg').fadeOut();
+                                                    location.reload();
+                                                }, 2000);
 
-                                            // }
+
+
+
+
+                                            }
                                             if (response == 2) {
                                                 $('#bgimg').addClass("bgimg-active");
                                                 $('#otpVerify').addClass('active');
@@ -166,15 +182,16 @@
                                                 //     $('#RepMsg').fadeIn();
                                                 //     $('#RepMsg').html('<i class="fa-solid fa-triangle-exclamation" style="color:red; font-size:11px;"></i>Invalid Email.')
                                                 // }
-                                                if (response == 5) {
-                                                    $('#RepMsg').fadeIn();
-                                                    $('#RepMsg').html('<i class="fa-solid fa-triangle-exclamation" style="color:red; font-size:11px;"></i>Empty Field.')
-                                                    $('#RepMsg').html('<i class="fa-solid fa-triangle-exclamation" style="color:red; font-size:11px;"></i>Empty Field.');
-                                                    setTimeout(() => {
-                                                        $('#RepMsg').fadeOut();
-                                                    }, 3000);
 
-                                                }
+                                            }
+                                            if (response == 5) {
+                                                $('#RepMsg').fadeIn();
+
+                                                $('#RepMsg').html('<i class="fa-solid fa-triangle-exclamation" style="color:red; font-size:15px;"></i>  Empty Field.');
+                                                setTimeout(() => {
+                                                    $('#RepMsg').fadeOut();
+                                                }, 3000);
+
                                             }
                                         }
                                     });
@@ -184,7 +201,7 @@
                     </script>
                 </div>
 
-                <div class="carousel">
+                <!-- <div class="carousel">
                     <div class="images-wrapper">
                         <img src="./img/image1.png" class="image img-1 show" alt="" />
                         <img src="./img/image2.png" class="image img-2" alt="" />
@@ -206,7 +223,7 @@
                             <span data-value="3"></span>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
@@ -235,23 +252,24 @@
             });
         });
 
-        function moveSlider() {
-            let index = this.dataset.value;
+        // function moveSlider() {
+        //     let index = this.dataset.value;
 
-            let currentImage = document.querySelector(`.img-${index}`);
-            images.forEach((img) => img.classList.remove("show"));
-            currentImage.classList.add("show");
+        //     let currentImage = document.querySelector(`.img-${index}`);
+        //     images.forEach((img) => img.classList.remove("show"));
+        //     currentImage.classList.add("show");
 
-            const textSlider = document.querySelector(".text-group");
-            textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
+        //     const textSlider = document.querySelector(".text-group");
+        //     textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
 
-            bullets.forEach((bull) => bull.classList.remove("active"));
-            this.classList.add("active");
-        }
+        //     bullets.forEach((bull) => bull.classList.remove("active"));
+        //     this.classList.add("active");
+        // }
 
-        bullets.forEach((bullet) => {
-            bullet.addEventListener("click", moveSlider);
-        });</script>
+        // bullets.forEach((bullet) => {
+        //     bullet.addEventListener("click", moveSlider);
+        // });</script>
+
 </body>
 
 </html>

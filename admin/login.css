@@ -17,11 +17,11 @@ main {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background-color: #ff8c6b;
+  background-color: #a9a9a9 !important;
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .box {
@@ -76,16 +76,18 @@ form.sign-up-form {
   height: 30px !important;
   width: 40px !important;
   padding-bottom: 5px !important;
+  margin-bottom: 5px;
 }
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 #sapn {
   color: #006d77;
 }
 .logo h4 {
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   margin-top: -9px;
   letter-spacing: -0.5px;
   color: #001427 !important;
@@ -304,10 +306,10 @@ main.sign-up-mode .carousel {
   border-radius: 1rem;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 2000px) {
   .box {
     height: auto;
-    max-width: 550px;
+    max-width: 440px;
     overflow: hidden;
   }
 
@@ -321,7 +323,7 @@ main.sign-up-mode .carousel {
 
   .forms-wrap {
     position: revert;
-    width: 100%;
+    width: auto;
     height: auto;
   }
 
