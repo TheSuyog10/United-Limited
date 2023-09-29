@@ -26,7 +26,7 @@
                 <p><a href="aboutUs.php#services">Real Estate
                         Appraisal</a> </p>
             </div>
-            <div class="social-media">
+            <div class="social-media1">
                 <h2 class="sub-heading">Quick Links</h2>
                 <p>
                     <a href="index.php">Home</a>
