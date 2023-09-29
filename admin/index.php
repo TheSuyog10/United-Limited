@@ -122,7 +122,7 @@
                             <p class="text">
                                 By signing up, I
                                 agree to the
-                                Terms of Servicesand
+                                Terms of Services and
                                 Privacy Policy
                             </p>
                         </div>

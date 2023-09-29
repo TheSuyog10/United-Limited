@@ -14,7 +14,7 @@
 <body>
     <div class="footer">
         <div class="heading">
-            <h2 style="align-text:center">United <span style="c">Limited</span></h2>
+            <h2 style="align-text:center">United <span style="color: #006d77;">Limited</span></h2>
         </div>
         <div class="content">
             <div class="services">
@@ -49,7 +49,7 @@
             <div class="links">
                 <h2 class="sub-heading">Contact</h2>
                 <p>Bharatpur-4, Chitwan, Nepal</p>
-                <p>Phone: +977 9855099887</p>
+                <p>Phone: +977 9845911212</p>
                 <p>Email: <a href="mailto:united.limited@gmail.com">united.limited@gmail.com</a></p>
                 <p>Website: <a href="http://www.unitedlimited.com.np">www.unitedlimited.com.np</a></p>
 

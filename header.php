@@ -5,20 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
-    <script src="https://kit.fontawesome.com/a48f842f69.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d5cb331474.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="header">
-        <h1 class="logo"><a href="index.php">United <span>Limited</span></a></h1>
+        <h1 class="logo"><a href="index.php">United <span style="color: #006d77;">Limited</span></a></h1>
         <ul class="main-nav">
-            <li><a href="index.php"><i class="fa-solid fa-house"></i>Home</a></li>
-            <li><a href="booking.php">Booking</a></li>
-            <li><a href="#">News & Events</a></li>
-            <li><a href="#">Photo Gallery</a></li>
-            <li><a href="aboutUs.php">About Us</a></li>
-            <li><a href="contactUs.php">Contact Us</a></li>
-            <li><a href="admin\index.php">Login</a></li>
+            <li><a href="index.php"><i class="fa-solid fa-house"></i>
+                    <span> Home</span>
+                </a></li>
+
+            <li><a href="booking.php"><i class="fa-regular fa-calendar-days"></i><span> Booking</span></a></li>
+            <li><a href="#"><i class="fa-solid fa-newspaper"></i> <span>News & Events</span></a></li>
+            <li><a href="#"><i class="fa-solid fa-images"></i> <span>Photo Gallery</span></a></li>
+            <li><a href="aboutUs.php"><i class="fa-solid fa-circle-info"></i> <span>About Us</span></a></li>
+            <li><a href="contactUs.php"><i class="fa-solid fa-phone-volume"></i> <span>Contact Us</span></a></li>
+            <li><a href="admin\index.php"><i class="fa-solid fa-right-to-bracket"></i> <span>Login</span></a></li>
         </ul>
     </header>
 
@@ -33,9 +36,7 @@
         scroll-behavior: smooth;
     }
 
-    span {
-        color: #006d77;
-    }
+
 
     body {
         font-family: 'Montserrat', sans-serif;
@@ -52,9 +53,11 @@
     }
 
 
+
     h2,
     h3,
-    a {
+    a,
+    span {
         color: #001427;
     }
 
@@ -91,12 +94,14 @@
         display: block;
     }
 
-    .main-nav a {
+    .main-nav a,
+    .main-nav span {
         color: #001427;
         font-size: .99em;
     }
 
-    .main-nav a:hover {
+    .main-nav a:hover,
+    .main-nav span:hover {
         color: #006d77;
 
     }
@@ -121,34 +126,55 @@
   Media Queries
 ==================================== */
 
+    @media (max-width: 769px) {
+        .main-nav span {
+            display: none;
+            /* Hide text */
+        }
 
+        .main-nav i {
+            display: block !important;
+        }
 
-
-    @media (min-width: 769px) {
-
-        .header,
         .main-nav {
             display: flex;
+            /* Display icons in a row */
+            justify-content: space-around;
+            /* Add space between icons */
         }
-
-        .header {
-            flex-direction: column;
-            align-items: center;
-
-            .header {
-                width: 80%;
-                margin: 0 auto;
-                max-width: 1150px;
-            }
-        }
-
     }
 
-    @media (min-width: 1025px) {
+
+
+
+
+
+
+
+    .header,
+    .main-nav {
+        display: flex;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+
+        /* .header {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1150px;
+        } */
+    }
+
+
+
+    @media (min-width: 1199px) {
         .header {
             flex-direction: row;
             justify-content: space-between;
         }
+
 
     }
 </style>
