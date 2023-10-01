@@ -306,7 +306,7 @@ main.sign-up-mode .carousel {
   border-radius: 1rem;
 }
 
-@media (max-width: 2000px) {
+@media (max-width: 3000px) {
   .box {
     height: auto;
     max-width: 440px;

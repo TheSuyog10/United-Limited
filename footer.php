@@ -38,7 +38,7 @@
                     <a href="booking.php">Book Now</a>
                 </p>
                 <p>
-                    <a href="#">Gallery</a>
+                    <a href="listing.php">Listing</a>
                 </p>
                 <p>
                     <a href="#">News And Events</a>

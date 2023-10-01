@@ -12,13 +12,15 @@
     <header class="header">
         <h1 class="logo"><a href="index.php">United <span style="color: #006d77;">Limited</span></a></h1>
         <ul class="main-nav">
-            <li><a href="index.php"><i class="fa-solid fa-house"></i>
-                    <span> Home</span>
-                </a></li>
-
-            <li><a href="booking.php"><i class="fa-regular fa-calendar-days"></i><span> Booking</span></a></li>
+            <li>
+                <p><a href="index.php"><i class="fa-solid fa-house"></i>
+                        <span> Home</span>
+                    </a></p>
+            </li>
+            <!-- 
+            <li><a href="booking.php"><i class="fa-regular fa-calendar-days"></i><span> Booking</span></a></li> -->
             <li><a href="#"><i class="fa-solid fa-newspaper"></i> <span>News & Events</span></a></li>
-            <li><a href="#"><i class="fa-solid fa-images"></i> <span>Photo Gallery</span></a></li>
+            <li><a href="listing.php"><i class="fa-solid fa-clipboard-list"></i> <span>Listing</span></a></li>
             <li><a href="aboutUs.php"><i class="fa-solid fa-circle-info"></i> <span>About Us</span></a></li>
             <li><a href="contactUs.php"><i class="fa-solid fa-phone-volume"></i> <span>Contact Us</span></a></li>
             <li><a href="admin\index.php"><i class="fa-solid fa-right-to-bracket"></i> <span>Login</span></a></li>
@@ -100,7 +102,7 @@
         font-size: .99em;
     }
 
-    .main-nav a:hover,
+
     .main-nav span:hover {
         color: #006d77;
 
@@ -130,6 +132,11 @@
         .main-nav span {
             display: none;
             /* Hide text */
+        }
+
+        .main-nav a:hover {
+            color: #006d77;
+            ;
         }
 
         .main-nav i {

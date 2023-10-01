@@ -23,10 +23,8 @@ include 'header.php' ?>
             <div class="contact-info">
                 <h3 class="title">Let's get in touch</h3>
                 <p class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                    dolorum adipisci recusandae praesentium dicta!
+                    Have a question or need assistance? We're here for you! Contact us for all your real estate needs.
                 </p>
-
                 <div class="info">
                     <div class="information">
                         <i class="fa-solid fa-map-location-dot fa-xl" style="color: #13bd9d; margin-right:10px;"> </i>
@@ -109,10 +107,6 @@ include 'header.php' ?>
         $Phone = $_POST['phone'];
         $Subject = $_POST['subject'];
         $Message = $_POST['message'];
-
-
-        $query = "insert into contact(fullName, email, phone, subject, message)values('$Name','$Email','$Phone','$Subject','$Message')";
-        $run = mysqli_query($conn, $query);
         if ($Name == "" || $Email == "" || $Phone == "" || $Subject == "" || $Message == "") {
             echo "<script>
             document.getElementById('RepMsg1').innerHTML = '<i class=\"fas fa-triangle-exclamation\" style=\"color:red; font-size:15px;\"></i> Empty Fields';
@@ -121,6 +115,8 @@ include 'header.php' ?>
             }, 3000);
             </script>";
         } else {
+            $query = "insert into contact(fullName, email, phone, subject, message)values('$Name','$Email','$Phone','$Subject','$Message')";
+            $run = mysqli_query($conn, $query);
             if ($run) {
                 echo "<script> swal('Message Sent', 'We will Contact You Soon', 'success'); </script>";
 
