@@ -15,6 +15,11 @@
 <body>
 
     <main>
+        <div class="content">
+            <img src="..\assets\listingimages\house.jpg" alt="">
+            <div style="position:absolute"></div>
+            <H1 style="left:left;">REgistor to Buy Property</H1>
+        </div>
         <div class="box">
             <div class="inner-box">
                 <div class="forms-wrap">
@@ -32,7 +37,7 @@
                         <h4 style="text-align:center;color:red; font-weight:400" id="RepMsg1"></h4>
                         <div class="actual-form">
                             <div class="input-wrap">
-                                <input type="text" minlength="4" class="input-field" name="uname" autocomplete="off" />
+                                <input type="text" class="input-field" name="uname" autocomplete="off" />
                                 <label><i class="fas fa-user"></i> Username</label>
                             </div>
 
@@ -226,6 +231,7 @@
                 </div> -->
             </div>
         </div>
+
     </main>
 
     <!-- Javascript file -->

@@ -21,7 +21,24 @@ main {
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+.content {
+  height: 100vh;
+  flex-basis: 75%;
+  background-color: #8371fd;
+}
+.content img {
+  width: 70%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+.content h1 {
+  position: absolute;
+  top: 20%;
+  left: 16%;
+  transform: translate(-50%, -50%);
 }
 
 .box {
@@ -394,5 +411,8 @@ main.sign-up-mode .carousel {
 
   form {
     padding: 1rem 2rem 1.5rem;
+  }
+  .content {
+    display: none;
   }
 }

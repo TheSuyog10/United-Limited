@@ -33,6 +33,7 @@
                     </span>
                     <p>
 
+                        <i class="fa-solid fa-location-dot"></i>
                         <?php echo $row['location']; ?>
                     </p>
                     <div class="stars">
@@ -59,6 +60,7 @@
                     <button
                         onclick="window.location.href='listingDescription.php?listingId=<?php echo $row['listingId']; ?>'"
                         class="buttonclass">Details</button>
+
 
                 </div>
             </div>
@@ -87,9 +89,12 @@
     .container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 50px 100px;
-        margin: auto auto;
+        justify-content: flex-start;
+        padding: 40px 0px;
+
+
+
+
     }
 
     .property_card {
@@ -100,12 +105,12 @@
         padding: 20px 30px 30px 30px;
         border-radius: 20px;
         background: #80a5c2;
-        box-shadow: -5px 5px 0px #7fa3c0,
-            5px -5px 0px #81a7c4;
+        box-shadow: inset 5px 5px 10px #7fa3c0,
+            inset -5px -5px 10px #81a7c4;
         z-index: 3;
         overflow: hidden;
         align-items: space-between;
-        margin-bottom: 20px;
+        margin: 30px 30px 30px 30px;
         /* Add space between rows */
     }
 
@@ -212,7 +217,8 @@
         height: 100%;
         width: 300%;
         left: -100%;
-        background-image: linear-gradient(135deg, #9708CC, #43CBFF, #9708CC, #43CBFF);
+        /* background-image: linear-gradient(135deg, #9708CC, #43CBFF, #9708CC, #43CBFF); */
+        background-image: linear-gradient(135deg, #002548, #004e99, #002243, #4d6375);
         transition: all 0.4s ease;
         border-radius: 25PX;
     }

@@ -134,6 +134,10 @@
             /* Hide text */
         }
 
+        .main-nav i {
+            font-size: 18px !important;
+        }
+
         .main-nav a:hover {
             color: #006d77;
             ;

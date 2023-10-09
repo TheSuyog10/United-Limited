@@ -60,8 +60,8 @@
         padding: 20px;
         border-radius: 19px;
         background: #638a8c;
-        box-shadow: -5px 5px 0px #608688,
-            5px -5px 0px #668e90;
+        box-shadow: inset 5px 5px 10px #608688,
+            inset -5px -5px 10px #668e90;
 
     }
 
